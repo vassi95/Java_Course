@@ -1,1 +1,1 @@
-Java Course - Soft Intellect
+JAVA Course --- Software Academy SOFT INTELLECT
