@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class RemainderAfterDiv {
+
+	public static void main(String[] args) {
+		int firstNum, secondNum;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the first number: ");
+		firstNum = input.nextInt();
+		System.out.println("Enter the second number: ");
+		secondNum = input.nextInt();
+		input.close();
+		System.out.println("The remainder of division is:" + firstNum % secondNum);
+	}
+
+}

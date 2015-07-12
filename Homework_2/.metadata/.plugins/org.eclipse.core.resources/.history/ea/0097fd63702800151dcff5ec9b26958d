@@ -1,0 +1,25 @@
+
+public class Swap {
+
+	public static void main(String[] args) {
+		int a = 5;
+		int b = 8;
+		System.out.println("a = " + a);
+		System.out.println("b = " + b);
+		a = a*b;
+		b = a/b;
+		a = a/b;
+		System.out.println("The values of \"a\" and \"b\" after swapping are: ");
+		System.out.println("a = " + a);
+		System.out.println("b = " + b);
+		/* int temp;
+		temp = a;
+		a = b;
+		b = temp;
+		System.out.println("The values of \"a\" and \"b\" after swapping are: ");
+		System.out.println("a = " + a);
+		System.out.println("b = " + b); */
+
+	}
+
+}

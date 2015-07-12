@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Company {
+
+	public static void main(String[] args) {
+		String firstName, lastName;
+		byte age;
+		long idNumber, phoneNumber;
+		char gender;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter first name: ");
+		firstName = input.nextLine();
+		System.out.print("Enter last name: ");
+		lastName = input.nextLine();
+		System.out.print("Enter age: ");
+		age = input.nextByte();
+		System.out.print("Enter gender(m/f): ");
+		gender = input.next().charAt(0);
+		System.out.print("Enter personal ID: ");
+		idNumber = input.nextLong();
+		System.out.print("Enter telephone number: ");
+		phoneNumber = input.nextLong();
+		input.close();
+		System.out.println("First Name: " + firstName);
+		System.out.println("Last Name: " + lastName);
+		System.out.println("Age: " + age);
+		System.out.println("Gender: " + gender);
+		System.out.println("Personal ID: " + idNumber);
+		System.out.println("Telephone Number: " + phoneNumber);
+
+	}
+
+}
