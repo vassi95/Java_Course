@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Division_plus_minus {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the first number: ");
+		float num1 = input.nextFloat();
+		System.out.println("Enter the second number: ");
+		float num2 = input.nextFloat();
+		
+		if(num1 == 0 && num2 != 0){
+			System.out.println("The result will be ZERO or INFINITY!"); //depends on which number will be the numerator
+		}
+		else if(num1 == 0 && num2 == 0){
+			System.out.println("The result won't be a number!");
+		}
+		else if((num1 > 0 && num2 > 0) || (num1 < 0 && num2 < 0)){
+			System.out.println("The result will be a POSITIVE number!");
+		}
+		else{
+			System.out.println("The result will be a NEGATIVE number!");
+		}
+		input.close();
+
+	}
+
+}

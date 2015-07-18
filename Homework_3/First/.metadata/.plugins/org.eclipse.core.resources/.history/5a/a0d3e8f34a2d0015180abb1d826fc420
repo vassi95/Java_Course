@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class NumberIntoText {
+	public static void pw(int n, String ch) {
+		String one[] = { " ", " one", " two", " three", " four", " five", " six", " seven", " eight", " Nine", " ten",
+				" eleven", " twelve", " thirteen", " fourteen", "fifteen", " sixteen", " seventeen", " eighteen",
+				" nineteen" };
+		String ten[] = { " ", " ", " twenty", " thirty", " forty", " fifty", " sixty", "seventy", " eighty",
+				" ninety" };
+		if (n > 19) {
+			System.out.print(ten[n / 10] + " " + one[n % 10]);
+		} else {
+			System.out.print(one[n]);
+		}
+		if (n > 0)
+			System.out.print(ch);
+	}
+
+	public static void main(String[] args) {
+		int n = 0;
+		String one[] = { " ", " one", " two", " three", " four", " five", " six", " seven", " eight", " Nine", " ten",
+				" eleven", " twelve", " thirteen", " fourteen", "fifteen", " sixteen", " seventeen", " eighteen",
+				" nineteen" };
+		String ten[] = { " ", " ", " twenty", " thirty", " forty", " fifty", " sixty", "seventy", " eighty",
+				" ninety" };
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter an integer number: ");
+		n = input.nextInt();
+		if (n <= 0)
+			System.out.println("Enter numbers greater than 0");
+		else {
+			int m = (n / 100) % 10;
+			if(m>0){
+				System.out.print(one[m] + " hundred");
+			}
+			int k = n % 100;
+			if(k>0){
+				System.out.print(ten[n / 10] + " " + one[n % 10]);
+			}
+
+		}
+		input.close();
+	}
+}

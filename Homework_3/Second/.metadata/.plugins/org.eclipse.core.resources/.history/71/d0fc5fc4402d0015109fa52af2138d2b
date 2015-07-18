@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class FactorialDiv {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+			
+		    int factorial_n = 1;
+		    int factorial_k = 1;
+		    int n, k;
+		    for(;; ){
+			System.out.print("\nEnter \"K\" ( Must be greater than 1): ");
+			k = input.nextInt();
+			if(k<=1){
+				System.out.print("ERROR!!!");
+				continue;
+			}
+			System.out.print("Enter \"N\"( Must be greater than K): ");
+			n = input.nextInt();
+			if(n<k){
+				System.out.print("ERROR!!!");
+				continue;
+			}
+			
+
+			for(int i = 1; i <= n; i++){
+				factorial_n *= i;
+			}
+			for(int i = 1; i <= k; i++){
+				factorial_k *= i;
+			}
+			
+			int equation = factorial_n / factorial_k;
+			System.out.println("N!/K! = " + equation);
+			input.close();
+	}
+		    
+}
+	
+}

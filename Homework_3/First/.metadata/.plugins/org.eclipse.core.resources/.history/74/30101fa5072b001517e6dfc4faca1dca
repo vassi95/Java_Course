@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class BonusPoints {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		do{
+			System.out.println("Enter your points (0-9)!:");
+			int points = input.nextInt();
+		}while(points <=0 || points > 9)
+			if(points >0 || points <= 9){
+				System.out.println("The points can be from 1 to 9 !!!");
+				break;
+			}
+		}
+		input.close();
+	}
+
+}

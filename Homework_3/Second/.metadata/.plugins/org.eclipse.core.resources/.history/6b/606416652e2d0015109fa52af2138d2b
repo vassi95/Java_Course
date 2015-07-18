@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class SumOfNumbers {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		boolean flag = true;
+		int sum = 0;
+		while(flag){
+			System.out.println("Enter a number ( 0 for exit) : ");
+			int number = input.nextInt();
+			
+			if(number == 0){
+				flag = false;
+			}
+			else{
+				sum += number;
+			}
+			
+		}
+		System.out.print("The sum is: " + sum);
+		input.close();
+	}
+
+}

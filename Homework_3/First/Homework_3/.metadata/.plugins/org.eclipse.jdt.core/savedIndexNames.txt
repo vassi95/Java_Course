@@ -1,0 +1,1 @@
+INDEX VERSION 1.127+D:\JAVA\My_repo\Java_Course\Homework_3\First\Homework_3\.metadata\.plugins\org.eclipse.jdt.core

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class FactorialDiv {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		while(true){
+			System.out.print("Enter \"K\": ");
+			int k = input.nextInt();
+			if(k<=1){
+				continue;
+			}
+			input.close();
+		}
+		
+	}
+
+}

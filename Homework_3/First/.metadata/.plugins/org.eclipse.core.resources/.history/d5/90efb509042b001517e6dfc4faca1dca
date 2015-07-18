@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Triangle {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the first side: ");
+		int num1 = input.nextInt();
+		System.out.println("Enter the second side: ");
+		int num2 = input.nextInt();
+		System.out.println("Enter the third side: ");
+		int num3 = input.nextInt();
+		
+		if(num1 <=0 || num2 <= 0 || num3 <= 0){
+			System.out.println("This can be a trinagle!");
+		}
+		else if((num1+num2) < num3 || (num1+num3) < num2 || (num2+num3) < num1){
+			System.out.println("There isn't a triangle with this sides!");
+		}
+		else{
+			System.out.println("This can be a trinagle!");
+		}
+		input.close();
+	}
+}
