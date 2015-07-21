@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class SpiralMatrixFilling {
+
+//	public static void main(String[] args) {
+
+//		Scanner input = new Scanner(System.in);
+//		System.out.print("Enter the number of rols/cols : ");
+	//	int n = input.nextInt();
+		//int matrix[][] = new int[n][n];
+
+//		int beginX = 0;
+//		int endX = n - 1;
+//
+//		int beginY = 0;
+//		int endY = n - 1;
+//		int current = 1;
+//
+//		while (current <= n * n) {
+//			for (int col = beginX; col <= endX; col++) {
+//
+//				matrix[beginY][col] = current++;
+//			}
+//			beginY++;
+//			for (int row = beginY; row <= endY; row++) {
+//				matrix[row][endX] = current++;
+//			}
+//			endX--;
+//
+//			for (int col = endX; col >= beginX; col--) {
+//				matrix[endY][col] = current++;
+//			}
+//			endY--;
+//
+//			for (int row = endY; row >= beginY; row--) {
+//				matrix[row][beginX] = current++;
+//			}
+//			beginX++;
+//		}
+		public int[][] generateMatrix(int n) {
+	        // Start typing your Java solution below
+	        // DO NOT write main() function  
+	        if(n<=0) return new int[0][];
+	        int[][] result=new int[n][n];
+	        int xBeg=0,xEnd=n-1;
+	        int yBeg=0,yEnd=n-1;
+	        int cur=1;
+	        while(true){
+	            for(int i=yBeg;i<=yEnd;i++) result[xBeg][i]=cur++;
+	            if(++xBeg>xEnd) break;
+	            for(int i=xBeg;i<=xEnd;i++) result[i][yEnd]=cur++;
+	            if(--yEnd<yBeg) break;
+	            for(int i=yEnd;i>=yBeg;i--) result[xEnd][i]=cur++;
+	            if(--xEnd<xBeg) break;
+	            for(int i=xEnd;i>=xBeg;i--) result[i][yBeg]=cur++;
+	            if(++yBeg>yEnd) break;
+	        }
+	        return result;    
+	        
+//		for (int row = 0; row < n; row++) {
+//			for (int col = 0; col < n; col++) {
+//
+//				System.out.printf("%-5d", matrix[row][col]);
+//			}
+//			System.out.print("\n");
+//		}
+//		input.close();
+	}
+}

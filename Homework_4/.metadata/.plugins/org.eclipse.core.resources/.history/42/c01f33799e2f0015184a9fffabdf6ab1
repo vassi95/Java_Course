@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class SpiralMatrixFilling {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the number of rols/cols : ");
+		int p = input.nextInt();
+		int m[][] = new int[p][p];
+		
+		        int n=1, s=4, c=1, i=0, j=0;
+		        while(n>=1)
+		        { 
+		            do
+		            {
+		                m[i][j] = c++;
+		                n++;
+		                j++;
+		            }
+		            while(n<s);
+		            n =  0;
+		            do
+		            {
+		                m[i][j] = c++;
+		                n++;
+		                i++;
+		            } 
+		            while(n<s-1);
+		            n = 0;
+		            do
+		            {
+		                m[i][j]=c++;
+		                n++;
+		                j--;
+		            }
+		            while(n<s-1);
+		            n = -1;
+		            do
+		            {
+		                m[i][j] = c++;
+		                n++;
+		                i--;
+		            }
+		            while(n<s-2);
+		            n = n - 2;
+		        }
+		        for(i=0; i<s; i++)
+		        {
+		            for(j=0; j<s; j++)
+		            {
+		                System.out.print(m[i][j] + " ");
+		            }
+		            System.out.println();
+		        }
+
+
+
+//		int beginX = 0;
+//		int endX = n - 1;
+//
+//		int beginY = 0;
+//		int endY = n - 1;
+//		int current = 1;
+//
+//		while (current <= n * n) {
+//			for (int col = beginX; col <= endX; col++) {
+//
+//				matrix[beginY][col] = current++;
+//			}
+//			beginY++;
+//			for (int row = beginY; row <= endY; row++) {
+//				matrix[row][endX] = current++;
+//			}
+//			endX--;
+//
+//			for (int col = endX; col >= beginX; col--) {
+//				matrix[endY][col] = current++;
+//			}
+//			endY--;
+//
+//			for (int row = endY; row >= beginY; row--) {
+//				matrix[row][beginX] = current++;
+//			}
+//			beginX++;
+//		}
+		
+//		
+//		for (int row = 0; row < n; row++) {
+//			for (int col = 0; col < n; col++) {
+//
+//				System.out.printf("%-5d", matrix[row][col]);
+//			}
+//			System.out.print("\n");
+//		}
+		input.close();
+	}
+}

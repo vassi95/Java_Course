@@ -1,0 +1,29 @@
+
+import java.util.Scanner;
+public class SumOfEven {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int sum = 0;
+		
+		System.out.print("Enter the length of the array:");
+        int n = input.nextInt();
+
+		 
+        System.out.print("Enter the elements of the array:");
+        int[] matrix = new int[n];
+
+        for (int row = 0; row <= matrix.length; row++)
+              matrix[row] = input.nextInt();
+        
+        for (int row = 0; row <= matrix.length; row++){
+            	if(matrix[row] % 2 == 0){
+            		sum += matrix[row];
+            	}
+            }
+        input.close();
+        System.out.println("The sum of even elements is: " + sum);
+
+	}
+
+}
