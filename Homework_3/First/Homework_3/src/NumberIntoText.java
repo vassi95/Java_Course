@@ -11,7 +11,8 @@ public class NumberIntoText {
 		int number = input.nextInt();
 		if (number <= 0 || number > 999) {
 			System.out.println("Enter a POSITIVE number (from 1 to 999)!");
-		} else {
+		} 
+		else {
 			int hundreds = (number / 100) % 10;
 			if (hundreds > 0) {
 				System.out.print(ones[hundreds] + " hundred ");
