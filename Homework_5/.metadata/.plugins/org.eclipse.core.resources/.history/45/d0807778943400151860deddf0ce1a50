@@ -14,6 +14,7 @@ public class EvenOrOdd {
 		System.out.println("-20 -> " + check(-20));
 		System.out.println("55 -> " + check(55));
 		System.out.println("1234 -> " + check(1234));
+
 	}
 
 	public static String check(int num) {
