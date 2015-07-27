@@ -1,0 +1,42 @@
+
+import java.util.Scanner;
+
+public class Permutations {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a number:");
+		int n = input.nextInt();
+		int array[] = new int[n];
+		for (int i = 0; i < n; i++) {
+			array[i] = i + 1;
+		}
+
+		perm2(array, n);
+
+		input.close();
+	}
+
+
+public static void perm2(int[] a, int n) {
+    if (n == 1) {
+    	System.out.print("(");
+		for (int j = 0; j < n; j++) {
+			System.out.print(a[j] + ",");
+		}
+		System.out.print(")");
+    }
+    for (int i = 0; i < n; i++) {
+        swap(a, i, n-1);
+        perm2(a, n-1);
+        swap(a, i, n-1);
+    }
+}  
+
+// swap the characters at indices i and j
+public static void swap(int[] a, int i, int j) {
+    int c;
+    c = a[i]; 
+    a[i] = a[j]; 
+    a[j] = c;
+}}

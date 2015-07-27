@@ -1,0 +1,20 @@
+public class SymmetricNumbers {
+
+	public static void main(String[] args) {
+		for(int i =10; i<1000; i++){
+		System.out.println(symmetric(i));
+		}
+	}
+	
+	public static int symmetric(int number){
+		int hundreds = (number / 100);
+		int remaining = number %10;
+		boolean check = hundreds!=0;
+		if(hundreds == remaining && check){
+			return number;
+		}
+		return 0;
+
+	}
+
+}

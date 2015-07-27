@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+
+public class Permutations {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a number: ");
+		int n = input.nextInt();
+
+		System.out.println("\nThe permutations are: ");
+		permutation(writeArray(n), n, 0);
+		input.close();
+
+
+	}
+	public static int[] writeArray(int number){
+		int[] array = new int[number];
+		for(int i =1 ; i<=number; i++){
+			array[i] = i;
+		}
+		return array;
+	}
+	
+		public static void permutation(int[] array, int beg ,int end ) {
+		if(end==beg){
+			for(int i = 0; i < array.length; i++){
+				System.out.print(array[i] + " ");
+			}
+			System.out.println();
+		}
+
+		else {
+			for (int i = end; i< beg; i++) {
+				int temp = array[beg];
+				array[beg] = array[end];
+				array[end] = temp;
+				permutation(array, beg, end+1);
+				temp = array[beg];
+				array[beg] = array[end];
+				array[end] = temp;
+			}
+		}
+	}
+
+}

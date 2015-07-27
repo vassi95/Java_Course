@@ -1,0 +1,31 @@
+
+import java.util.Scanner;
+
+public class Permutations {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a number:");
+		int n = input.nextInt();
+		int array[] = new int[n];
+		for (int i = 0; i < n; i++) {
+			array[i] = i + 1;
+		}
+
+		permute(java.util.Arrays.asList(3,4,6,2,1), 0);
+
+		input.close();
+	}
+
+	static void permute(java.util.List<Integer> arr, int k){
+        for(int i = k; i < arr.size(); i++){
+            java.util.Collections.swap(arr, i, k);
+            permute(arr, k+1);
+            java.util.Collections.swap(arr, k, i);
+        }
+        if (k == arr.size() -1){
+            System.out.println(java.util.Arrays.toString(arr.toArray()));
+        }
+    }
+
+}

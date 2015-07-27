@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class SymmetricNumbers {
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		System.out.println(symmetric(rand.nextInt(999)));
+
+	}
+	
+	public static int symmetric(int number){
+		int hundreds = (number / 100) % 10;
+		int remaining = (number % 100)%10;
+		if(hundreds == remaining){
+			return number;
+		}
+		return 0;
+
+	}
+
+}
