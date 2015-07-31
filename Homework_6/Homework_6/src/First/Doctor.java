@@ -1,0 +1,46 @@
+package First;
+
+public class Doctor extends Employee {
+	protected int nightDutiesPerMonth;
+	protected int dayDutiesPerMonth;
+
+	public Doctor() {
+		setHoursPerMonth(0);
+		setSalary(0);
+		setNightDutiesPerMonth(0);
+		setDayDutiesPerMonth(0);
+	}
+
+	public Doctor(int hoursPerMonth, int salary, int nightDutiesPerMonth, int dayDutiesPerMonth) {
+		setHoursPerMonth(hoursPerMonth);
+		setSalary(salary);
+		setNightDutiesPerMonth(nightDutiesPerMonth);
+		setDayDutiesPerMonth(dayDutiesPerMonth);
+
+	}
+
+	public int getNightDutiesPerMonth() {
+		return nightDutiesPerMonth;
+	}
+
+	public void setNightDutiesPerMonth(int nightDutiesPerMonth) {
+		this.nightDutiesPerMonth = nightDutiesPerMonth;
+	}
+
+	public int getDayDutiesPerMonth() {
+		return dayDutiesPerMonth;
+	}
+
+	public void setDayDutiesPerMonth(int dayDutiesPerMonth) {
+		this.dayDutiesPerMonth = dayDutiesPerMonth;
+	}
+
+	public void sayNightDuties() {
+		System.out.println("My night duties for the moth are : " + this.nightDutiesPerMonth);
+	}
+
+	public void sayDayDuties() {
+		System.out.println("My day duties for the moth are : " + this.dayDutiesPerMonth);
+	}
+
+}

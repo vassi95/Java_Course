@@ -1,0 +1,7 @@
+package Sixth;
+
+public class Store {
+	private String name;
+	private String location;
+	
+}

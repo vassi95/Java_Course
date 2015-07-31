@@ -1,0 +1,29 @@
+package Third;
+
+public class SUV extends Car{
+protected boolean isPassable;
+
+
+
+public SUV() {
+	setPrice(0);
+	setPassable(false);
+}
+
+public SUV(int price, boolean passable) {
+	setPrice(price);
+	setPassable(passable);
+}
+
+public boolean isPassable() {
+	return isPassable;
+}
+
+public void setPassable(boolean isPassable) {
+	this.isPassable = isPassable;
+}
+public void sayAllRoad(){
+	System.out.println(" The automobile is offroad " + this.isPassable);
+}
+
+}

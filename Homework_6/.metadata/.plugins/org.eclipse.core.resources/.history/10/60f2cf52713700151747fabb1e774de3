@@ -1,0 +1,29 @@
+package Third;
+
+public class Automobile extends Car {
+	protected int fuelExpenses;
+
+	
+	
+	public Automobile() {
+		setPrice(0);
+		 setFuelExpenses(0);
+	}
+
+	public Automobile(int price, int fuelExpences) {
+		setPrice(price);
+		 setFuelExpenses(fuelExpences);
+	}
+
+	public int getFuelExpenses() {
+		return fuelExpenses;
+	}
+
+	public void setFuelExpenses(int fuelExpenses) {
+		this.fuelExpenses = fuelExpenses;
+	}
+	public void sayFuel(){
+		System.out.printf(". Fuel consumption: %d/100 \n", fuelExpenses);
+	}
+
+}

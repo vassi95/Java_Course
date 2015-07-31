@@ -1,0 +1,85 @@
+package FourthSecond;
+
+import java.util.Scanner;
+import java.util.Arrays;
+import Fourth.*;
+
+public class Store {
+	private String name;
+	private String location;
+
+	public Store() {
+		setName("");
+		setLocation("");
+	}
+
+	public Store(String name, String location) {
+		setName(name);
+		setLocation(location);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public static void main(String[] arguments) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the number of products you want to add: ");
+		int number = input.nextInt();
+		Stock[] products = new Stock[number];
+		for (int i = 0; i < products.length; i++) {
+		System.out.print("What kind of product you want to enter?");
+		System.out.print("1.Meat");
+		System.out.print("2.Vegetable");
+		System.out.print("3.Fruit");
+		System.out.print("4.Dessert");
+		System.out.print("5.Drink");
+		int choise = input.nextInt();
+		
+		switch(choise){
+		case 1: System.out.println("Plesase enter price");
+		int price=input.nextInt();
+		 
+		System.out.println("Plesase enter how weight of the meat in grams");
+		int grams=input.nextInt();
+	 
+		input.nextLine();
+		
+		System.out.println("Plesase enter the animal from which is the meat");
+		String animal=input.nextLine();
+	 
+		}
+
+		}
+		input.close();
+	}
+
+	public static Stock[] add(Stock[] array, Stock product) {
+		array = Arrays.copyOf(array, array.length + 1);
+		array[array.length - 1] = product;
+		return array;
+	}
+
+	public void available(Stock[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i].isStock() == false) {
+				System.out.printf("Stock %d is not available!\n", i);
+			} else {
+				System.out.printf("Stock %d is available!\n", i);
+			}
+		}
+	}
+
+}
