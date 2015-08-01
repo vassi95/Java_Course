@@ -1,0 +1,43 @@
+
+public class Lecturer extends Person{
+private String uniName;
+private final int maxLektions =10;
+
+public Lecturer() {
+	setFirstName("");
+	setLastName("");
+	setYearsOfExperience(0);
+	setUniName("");
+	counter++;
+}
+
+public Lecturer(String firstName, String lastName, int yearsOfExperience, String uniName) {
+	this();
+	setFirstName(firstName);
+	setLastName(lastName);
+	setYearsOfExperience(yearsOfExperience);
+	setUniName(uniName);
+}
+
+public String getUniName() {
+	return uniName;
+}
+
+public void setUniName(String uniName) {
+	this.uniName = uniName;
+}
+
+public int getMaxLektions() {
+	return maxLektions;
+}
+
+public void sayHello(){
+	System.out.println("Hello, everyone!");
+}
+
+public void sayMaxLektions(){
+	System.out.printf("I have maximum %d lektions per week!", maxLektions);
+}
+
+
+}

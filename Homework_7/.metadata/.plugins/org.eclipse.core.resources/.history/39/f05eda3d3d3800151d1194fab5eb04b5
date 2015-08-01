@@ -1,0 +1,33 @@
+
+public class Assistant extends Lecturer implements checkHomeworks{
+private boolean isChief;
+
+
+
+public Assistant() {
+	super();
+	setChief(false);
+}
+
+public Assistant(String firstName, String lastName, int yearsOfExperience, String uniName, boolean isChief) {
+	super(firstName, lastName, yearsOfExperience, uniName);
+	setChief(isChief);
+}
+
+public boolean isChief() {
+	return isChief;
+}
+
+public void setChief(boolean isChief) {
+	this.isChief = isChief;
+}
+
+@Override
+public void checkHomeworks() {
+	System.out.println("Homeworks of all groups are checked!");
+}
+
+
+
+
+}
