@@ -1,0 +1,19 @@
+package exceptions;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public static long checkForInstance(Account object)
+	        throws InvalidAccountException{
+		if(!(object instanceof Account)){
+			
+		}}
+		if(object instanceof PersonalAccount){
+			return this.personalID;
+		}
+
+}

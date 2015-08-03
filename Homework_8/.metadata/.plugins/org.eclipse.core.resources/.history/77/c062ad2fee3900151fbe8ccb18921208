@@ -1,0 +1,37 @@
+package exceptions;
+
+public class Account {
+	private double money;
+
+	public Account() {
+		setMoney(0.0);
+	}
+
+	public Account(double money) {
+		this();
+		setMoney(money);
+	}
+
+	public double getMoney() {
+		return money;
+	}
+
+	public void setMoney(double money) {
+		if(money < 0){
+			throw new NegativeMoneyException("You can't create an account with negative money!");
+		}
+		
+		this.money = money;
+	}
+
+
+public static void main(String[] args){
+	try{
+		Account a = new Account(500);
+	}
+	catch (NegativeMoneyException a);{
+		System.out.println();
+	}
+	
+}
+}

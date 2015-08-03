@@ -1,0 +1,20 @@
+package fromPresentation;
+
+
+public class Throw {
+
+		public static void main(String[] args) {
+			
+			User user = new User("blabla@abv.bg", "15sfss");
+			
+			try {
+				user.setEmail("sefs");
+				
+				System.out.println("Email: " + user.getEmail());
+			} catch (Exception exception) {
+				System.out.println("An error: " + exception.getMessage());
+			}
+
+		}
+
+	}

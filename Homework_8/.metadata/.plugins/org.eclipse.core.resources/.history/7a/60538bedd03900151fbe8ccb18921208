@@ -1,0 +1,28 @@
+package exceptions;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public static void readFile(String fileName)
+	        throws InvalidAccountException {
+		
+	    FileInputStream fileInputStream = null;
+	    
+	    fileInputStream = new FileInputStream(fileName);
+	    
+	    BufferedReader buffer = new BufferedReader(new InputStreamReader(fileInputStream));
+	    String temp = null;
+	    while ((temp = buffer.readLine()) != null) {
+	        System.out.println(temp);
+	    }
+	    
+	    buffer.close();
+	    
+	    fileInputStream.close();
+	}
+
+}

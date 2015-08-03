@@ -1,0 +1,33 @@
+package exceptions;
+
+public class CoorporativeAccount extends Account {
+	private String firmName;
+	private long bulstat;
+
+	public CoorporativeAccount() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CoorporativeAccount(double money) {
+		super(money);
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getFirmName() {
+		return firmName;
+	}
+
+	public void setFirmName(String firmName) {
+		this.firmName = firmName;
+	}
+
+	public long getBulstat() {
+		return bulstat;
+	}
+
+	public void setBulstat(long bulstat) {
+		this.bulstat = bulstat;
+	}
+
+}

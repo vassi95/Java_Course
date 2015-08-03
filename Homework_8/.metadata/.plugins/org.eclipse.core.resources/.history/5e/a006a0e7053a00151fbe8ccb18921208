@@ -1,0 +1,24 @@
+package exceptions;
+
+public class Account {
+	private double money;
+
+	public Account() {
+		setMoney(0.0);
+	}
+
+	public Account(double money) {
+		this();
+		setMoney(money);
+	}
+
+	public double getMoney() {
+		return money;
+	}
+
+	public void setMoney(double money) {
+		
+		this.money = money;
+	}
+
+}

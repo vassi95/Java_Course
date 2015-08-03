@@ -1,0 +1,10 @@
+package exceptions;
+
+public class IvalidAccountException extends Exception {
+
+	public IvalidAccountException() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}
