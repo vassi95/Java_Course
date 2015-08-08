@@ -1,0 +1,23 @@
+package countWords;
+
+import java.util.Scanner;
+
+public class CountWordsInText {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a word: ");
+		String word = input.nextLine();
+		System.out.println("Please enter text: ");
+		String text = input.nextLine();
+		int countWord = 0;
+		String[] strArr = text.split(" | \\.");
+		for (String str : strArr) {
+			if (str.equals(word)) {
+				countWord++;
+			}
+		}
+		System.out.printf("The word you entere is found: %d times in the text.", countWord);
+	}
+
+}

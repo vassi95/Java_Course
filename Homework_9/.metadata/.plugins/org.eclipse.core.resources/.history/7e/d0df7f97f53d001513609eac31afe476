@@ -1,0 +1,13 @@
+package mathExpression;
+
+public interface OurStackInterface {
+
+	    // Signature, and only the signature, of the push() method:
+	    public void push (char ch);
+
+	    // Same for the pop() method:
+	    public char pop ();
+
+	    // Same for the isEmpty() method:
+	    public boolean isEmpty ();
+}

@@ -1,0 +1,36 @@
+package uppercase;
+
+import java.util.Scanner;
+
+public class WordUppercase {
+/* First way: */
+//	public static void main(String[] args) {
+//		Scanner input = new Scanner(System.in);
+//		System.out.println("Please enter a word: ");
+//		String word = input.nextLine();
+//		System.out.println("Please enter text: ");
+//		String text= input.nextLine();
+//		String neww = text.replaceAll(word, word.toUpperCase());
+//		System.out.println(neww);
+//		input.close();
+//
+//	}
+
+	
+/* Second way: */
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a word: ");
+		String word = input.nextLine();
+		System.out.println("Please enter text: ");
+		String text = input.nextLine();
+
+		input.close();
+		for (int i = 0; i < text.length(); i++) {
+			if (text.contains(word)) {
+				word.toUpperCase();
+			}
+		}
+		System.out.println(text);
+	}
+}

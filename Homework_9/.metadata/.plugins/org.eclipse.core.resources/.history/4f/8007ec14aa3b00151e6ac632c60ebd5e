@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Sentence {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a sentence:");
+		String sentence = input.nextLine();
+		boolean beginning = sentence.startsWith("Greeting");
+		boolean end = sentence.endsWith(".");
+		boolean contain = sentence.contains("water");
+		input.close();
+		if(beginning){
+			System.out.printf("The sentense : %s begins with \"%s\"", sentence,beginning);
+		}
+		System.out.printf("The sentense : %s doesn't begin with \"%s\"", sentence,beginning);
+		if(end){
+			System.out.printf("The sentense : %s ends with \"%s\"", sentence,end);
+		}
+		System.out.printf("The sentense : %s doesn't end with \"%s\"", sentence,end);
+		if(contain){
+			System.out.printf("The sentense : %s contains \"%s\"", sentence,contain);
+		}
+		System.out.printf("The sentense : %s doesn't contain \"%s\"", sentence,contain);
+	}
+}

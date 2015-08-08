@@ -1,0 +1,16 @@
+package mathExpression;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter an expression: ");
+		String exp = input.nextLine();
+		check(exp);
+		input.close();
+
+	}
+
+}

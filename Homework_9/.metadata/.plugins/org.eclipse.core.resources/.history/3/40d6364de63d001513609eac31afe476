@@ -1,0 +1,61 @@
+package reverse;
+import java.util.Scanner;
+/* First way: */
+//public class ReverseString {
+//
+//	public static void main(String[] args) {
+//		Scanner input = new Scanner(System.in);
+//		System.out.println("Please enter a word: ");
+//		String word = input.nextLine();
+//		System.out.println(new StringBuilder(word).reverse().toString());
+//		input.close();
+//
+//	}
+//}
+
+
+/* Second way:*/
+//public class ReverseString {
+//
+//	public static void main(String[] args) {
+//		Scanner input = new Scanner(System.in);
+//		System.out.println("Please enter a word: ");
+//		String word = input.nextLine();
+//		String reversedWord = "";
+//	        for(int i=word.length(); i>0; i--) {
+//	            reversedWord += word.charAt(i-1);
+//	        }   
+//	     System.out.println("The reversed word is: " + reversedWord);
+//		input.close();
+//
+//	}
+
+
+/*Third way: */
+public class ReverseString {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a word: ");
+		String word = input.nextLine();
+		String str="";
+	    char cha[]=word.toCharArray();
+
+	    int l=word.length();
+	    int k=l-1;
+	    System.out.println(l);
+
+
+	    for(int i=0;k>=i;k--)
+	    {
+
+	        str+=cha[k];
+
+
+	    }
+	    //String text=String.valueOf(ch);
+	    System.out.println(str);
+		input.close();
+
+	}
+}
