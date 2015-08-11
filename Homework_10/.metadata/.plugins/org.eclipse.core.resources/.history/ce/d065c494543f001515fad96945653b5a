@@ -1,0 +1,40 @@
+package town;
+import java.util.HashSet;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Town Plovdiv = new Town("Plovdiv", "Bulgaria", 382737);
+		Town Paris = new Town("Paris", "France", 65031813);
+		Town Burgas = new Town("Burgas", "Bulgria", 219606);
+		Town Nottingham = new Town("Nottingham", " England", 314300);
+		Town Varna = new Town("Varna", "Bulgaria", 330000);
+		HashSet<Town> set = new HashSet<Town>();
+		set.add(Plovdiv);
+		set.add(Paris);
+		set.add(Burgas);
+		set.add(Nottingham);
+		set.add(Varna);
+		if(isObjectInSet(Varna, set)){
+			System.out.println("The set contains \"Varna\".");
+		}
+		else{
+		System.out.println("The set doesn't contain \"Varna\".");
+		}
+		
+	}
+		static boolean isObjectInSet(Object object, HashSet<?> set) {
+			   boolean result = false;
+			   for(Object o : set) {
+			     if(o == object) {
+			       result = true;
+			       break;
+			     }
+			   }
+
+			   return result;
+			}
+		
+
+
+}

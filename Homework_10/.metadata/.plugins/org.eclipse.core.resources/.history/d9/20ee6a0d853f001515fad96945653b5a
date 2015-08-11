@@ -1,0 +1,45 @@
+package library;
+
+import java.util.TreeMap;
+
+public class Library {
+	private String name;
+	private String address;
+	private TreeMap<Book, Integer> map = new TreeMap<Book, Integer>();
+
+	public Library() {
+		super();
+	}
+
+	public Library(String name, String address, TreeMap<Book, Integer> map) {
+		super();
+		setName(name);
+		setAddress(address);
+		setMap(map);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public TreeMap<Book, Integer> getMap() {
+		return map;
+	}
+
+	public void setMap(TreeMap<Book, Integer> map) {
+		this.map = map;
+	}
+
+}

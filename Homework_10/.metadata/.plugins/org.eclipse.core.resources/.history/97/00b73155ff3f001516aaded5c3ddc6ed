@@ -1,0 +1,57 @@
+package library;
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+public class Library {
+	private String name;
+	private String address;
+	private TreeMap<ArrayList<Book>, String> map = new TreeMap<ArrayList<Book>, String>();
+
+	public Library() {
+		super();
+	}
+
+	public Library(String name, String address, TreeMap<ArrayList<Book>, String> map) {
+		super();
+		setName(name);
+		setAddress(address);
+		setMap(map);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	
+	public TreeMap<ArrayList<Book>, String> getMap() {
+		return map;
+	}
+
+	public void setMap(TreeMap<ArrayList<Book>, String> map) {
+		this.map = map;
+	}
+
+	public void addBook(String name,String author,int pages){
+		ArrayList<Book> list = new ArrayList<Book>();
+		Book book = new Book(name, author,pages);
+		list.add(book);
+	}
+	
+	public void removeBook(String name){
+		map.remove(name);
+		copies --;
+	}
+
+}

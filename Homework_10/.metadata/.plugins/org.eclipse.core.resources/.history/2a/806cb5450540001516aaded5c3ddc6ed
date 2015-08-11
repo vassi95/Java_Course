@@ -1,0 +1,64 @@
+package library;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		Book firstBook = new Book("The Hunger Games", "Suzanne Collins", 200);
+		Book secondBook = new Book("Pride and Prejudice", "Jane Austen", 900);
+		
+		ArrayList<Book> firstList = new ArrayList<>();
+		firstList.add(firstBook);
+		
+		ArrayList<Book> secondList = new ArrayList<>();
+		secondList.add(secondBook);
+		
+		TreeMap<String, ArrayList<Book>> firstMap = new TreeMap<>();
+		firstMap.put("The Hunger Games", firstList);
+		firstMap.put("Pride and Prejudice", secondList);
+		
+		
+		Library first = new Library("Prosveta", "Montana", firstMap);
+		System.out.println(first);
+		System.out.println();
+		
+		first.addBook("The Hunger Games", "bla", 156);	
+		first.addBook("The Hunger Games", "bla", 156);	
+		first.addBook("Pride and Prejudice", "asdfa", 456);
+		first.removeBook("Pride and Prejudice");
+		first.addBook("Programming", "asjkbsd", 654);
+		
+		System.out.println(first);
+//		Scanner input = new Scanner(System.in);
+//		TreeMap<String, ArrayList<Book>> map = new TreeMap<String, ArrayList<Book>>();
+//		System.out.println("Enter the name of library: ");
+//		String name = input.nextLine();
+//
+//		System.out.println("Enter adress of library: ");
+//		String address = input.nextLine();
+//
+//		Library helikon = new Library(name, address, map);
+//
+//		System.out.println("Enter the name of the book:");
+//		String bookName = input.nextLine();
+//
+//		System.out.println("Enter the aouthor of the book:");
+//		String bookAuthor = input.nextLine();
+//
+//		System.out.println("Enter the pages of the book:");
+//		int bookPages = input.nextInt();
+//
+//		helikon.addBook(bookName, bookAuthor, bookPages);
+//
+//		System.out.println("Chose the name of the book you want to remove");
+//		String namee = input.next();
+//		helikon.removeBook(namee);
+//		System.out.println(map);
+//
+//		input.close();
+	}
+
+}

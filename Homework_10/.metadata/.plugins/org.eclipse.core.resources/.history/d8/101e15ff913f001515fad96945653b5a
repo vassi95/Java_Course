@@ -1,0 +1,64 @@
+package hashMap;
+import java.util.HashMap;
+public class Student {
+	private String firstName;
+	private String lastName;
+	private int number;
+	HashMap<String, Double> subjectAndGrades = new HashMap<String, Double>();
+
+	public Student() {
+		super();
+	}
+
+	public Student(String firstName, String lastName, int number) {
+		super();
+		setFirstName(firstName);
+		setLastName(lastName);
+		setNumber(number);
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public void addSubjectMark(String Subject, Double mark, HashMap<String, Double> hashMap){
+		if(hashMap.containsKey(Subject)){
+			hashMap.put(Subject, mark);
+		}
+	}
+	
+	public int calculateAverageMark(String Subject, HashMap<String, Double> hashMap){
+		int average = 0;
+		int all = 0;
+		int count = 0;
+	
+		if(hashMap.containsKey(Subject)){
+			for (String key: hashMap.keySet()) {
+			    all += hashMap.get(key);
+			    count ++;
+		}
+			average = all/count;
+	}
+		return average;
+	}
+}

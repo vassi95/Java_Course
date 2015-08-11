@@ -1,0 +1,49 @@
+package hashMap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		HashMap<String, Student> students = new HashMap<>();
+		
+		Scanner input  = new Scanner(System.in, "UTF-8");
+		int i = 0, j=0;
+		while(i<3){
+		System.out.printf("Enter first name of student %d: ", j);
+		String fName = input.next();
+		System.out.print("Enter last name of student: ");
+		String lName = input.next();
+		System.out.print("Enter number: ");
+		int number = input.nextInt();
+		HashMap<String, ArrayList<Double>> marksOnSubj = new HashMap<String, ArrayList<Double>>();
+		Student newStudent = new Student();
+		while(j<5){
+			ArrayList<Double> marks = new ArrayList<>();
+			System.out.printf("Enter name of subject %d: ", i);
+			String sName = input.next();
+			System.out.print("Enter 3 marks: ");
+			double m1 = input.nextDouble();
+			double m2 = input.nextDouble();
+			double m3 = input.nextDouble();
+			marks.add(m1);
+			marks.add(m2);
+			marks.add(m3);
+			marksOnSubj.put(sName, marks);
+			newStudent.setFirstName(fName);
+			newStudent.setLastName(lName);
+			newStudent.setNumber(number);
+			newStudent.setGrades(marksOnSubj);
+j++;
+		}
+		
+		students.put(fName, newStudent);
+		i++;
+		}
+		System.out.println(students);
+		input.close();
+	}
+
+}

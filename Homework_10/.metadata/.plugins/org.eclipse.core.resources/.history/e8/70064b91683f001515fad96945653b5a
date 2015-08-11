@@ -1,0 +1,29 @@
+package uniqueWords;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class UniqueWords {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter text: ");
+		String text = input.nextLine();
+		text = text.toLowerCase();
+		input.close();
+		String[] strArr = text.split(" | \\.");
+		HashMap<String, Integer> words = new HashMap<String, Integer>();
+		for (String word : strArr) {
+			Integer count = words.get(word);
+			if (count == null) {
+				count = 0;
+			}
+			words.put(word, count + 1);
+		}
+		for (String word : words.keySet()) {
+			System.out.println(word);
+		}
+
+	}
+
+}

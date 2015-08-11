@@ -1,0 +1,12 @@
+package hashMap;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Student first = new Student("Ivan", "Ivanov", 5);
+		Student second = new Student("Dragan", "Petkanov", 12);
+		Student third = new Student("Iordan", "Borisov", 18);
+
+	}
+
+}

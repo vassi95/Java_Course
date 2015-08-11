@@ -1,0 +1,23 @@
+package town;
+import java.util.HashSet;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Town town1 = new Town("Plovdiv", "Bulgaria", 382737);
+		Town town2 = new Town("Paris", "France", 65031813);
+		Town town3 = new Town("Burgas", "Bulgria", 219606);
+		Town town4 = new Town("Nottingham", " England", 314300);
+		Town town5 = new Town("Varna", "Bulgaria", 330000);
+		HashSet<Town> set = new HashSet<Town>();
+		set.add(town1);
+		set.add(town2);
+		set.add(town3);
+		set.add(town4);
+		set.add(town5);
+		System.out.println("Does the set contain \"Varna\"? "+ set.contains("Varna"));
+		
+
+	}
+
+}

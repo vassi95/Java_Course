@@ -1,0 +1,46 @@
+package library;
+
+import java.util.HashMap;
+
+public class Library {
+	private String name;
+	private String address;
+	private HashMap<Book, Integer> set = new HashMap<Book, Integer>();
+
+	public Library() {
+		super();
+	}
+
+	public Library(String name, String address, HashMap<Book, Integer> set) {
+		super();
+		setName(name);
+		setAddress(address);
+		setSet(set);
+
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public HashMap<Book, Integer> getSet() {
+		return set;
+	}
+
+	public void setSet(HashMap<Book, Integer> set) {
+		this.set = set;
+	}
+
+}

@@ -1,0 +1,55 @@
+package hashMap;
+
+import java.util.HashMap;
+
+public class Student {
+	private String firstName;
+	private String lastName;
+	private int number;
+	HashMap<String, Integer> subjectAndGrades = new HashMap<String, Integer>();
+
+	public Student() {
+		super();
+	}
+
+	public Student(String firstName, String lastName, int number, HashMap<String, Integer> subjectAndGrades) {
+		super();
+		setFirstName(firstName);
+		setLastName(lastName);
+		setNumber(number);
+		setSubjectAndGrades(subjectAndGrades);
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public HashMap<String, Integer> getSubjectAndGrades() {
+		return subjectAndGrades;
+	}
+
+	public void setSubjectAndGrades(HashMap<String, Integer> subjectAndGrades) {
+		this.subjectAndGrades = subjectAndGrades;
+	}
+
+}

@@ -1,0 +1,33 @@
+package words;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Words {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String[] words = new String[20];
+		System.out.println("Input 20 words: ");
+		for (int i = 0; i < 20; i++) {
+			words[i] = input.nextLine();
+		}
+		input.close();
+		countWords(words);
+	}
+
+	public static void countWords(String[] array) {
+		HashMap<String, Integer> words = new HashMap<String, Integer>();
+		for (String word : array) {
+			Integer count = words.get(word);
+			if (count == null) {
+				count = 0;
+			}
+			words.put(word, count + 1);
+		}
+		for (String word : words.keySet()) {
+			Integer counter = words.get(word);
+			System.out.printf("%s is written %d times\n", word, counter);
+		}
+	}
+}

@@ -1,0 +1,34 @@
+package hashMap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Test {
+
+	public static void main(String[] args) {
+		HashMap<String, ArrayList<Double>> grades1 = new HashMap<String, ArrayList<Double>>();
+		HashMap<String, ArrayList<Double>> grades2 = new HashMap<String, ArrayList<Double>>();
+		HashMap<String, ArrayList<Double>> grades3 = new HashMap<String, ArrayList<Double>>();
+		Student first = new Student("Ivan", "Ivanov", 5, grades1);
+		Student second = new Student("Dragan", "Petkanov", 12, grades2);
+		Student third = new Student("Iordan", "Borisov", 18, grades3);
+		
+		ArrayList<Double> firstGrades = new ArrayList<Double>();
+		firstGrades.add(5.0);
+		firstGrades.add(4.5);
+		firstGrades.add(6.0);
+		grades1.put("History", firstGrades);
+		ArrayList<Double> secondGrades = new ArrayList<Double>();
+		firstGrades.add(5.5);
+		firstGrades.add(4.0);
+		firstGrades.add(3.0);
+		grades1.put("Biology", secondGrades);
+		ArrayList<Double> thirdGrades = new ArrayList<Double>();
+		firstGrades.add(5.3);
+		firstGrades.add(4.2);
+		firstGrades.add(5.8);
+		grades1.put("Math", thirdGrades);
+		addSubjectMark("Math", firstGrades, grades1);
+	}
+
+}

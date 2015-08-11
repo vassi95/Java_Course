@@ -1,0 +1,20 @@
+package words;
+
+import java.util.Scanner;
+
+public class Words {
+	
+	public static void main(String[] args) {
+	Scanner input =new Scanner(System.in);
+	String[] words = new String[20];
+	for(int i = 0; i<20; i++){
+		System.out.println("Word: ");
+		words[i]=input.nextLine();
+	}
+	input.close();
+	}
+	
+	public static void countWords(String[] array){
+		
+	}
+}

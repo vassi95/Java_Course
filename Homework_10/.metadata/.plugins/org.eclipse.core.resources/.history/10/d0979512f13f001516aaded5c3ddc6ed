@@ -1,0 +1,16 @@
+package hashMap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Test {
+
+	public static void main(String[] args) {
+		HashMap<String, Student> students = new HashMap<>();
+		HashMap<String, ArrayList<Double>> marksOnSubj = new HashMap<String, ArrayList<Double>>();
+		ArrayList<Double> marks = new ArrayList<>();
+		
+				
+	}
+
+}

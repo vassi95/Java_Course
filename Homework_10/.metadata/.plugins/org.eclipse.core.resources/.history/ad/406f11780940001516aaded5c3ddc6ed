@@ -1,0 +1,61 @@
+package library;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		
+Scanner input = new Scanner(System.in,"UTF-8");
+TreeMap<String, ArrayList<Book>> map = new TreeMap<String, ArrayList<Book>>();
+		System.out.println("Enter the name of library: "); 
+		String name=input.nextLine();
+		
+		System.out.println("Enter adress of library: "); 
+		String address=input.nextLine();
+
+		Library helikon = new Library (name,address, map);
+		
+		System.out.println(helikon.getName());
+		System.out.println(helikon.getAddress());
+		System.out.println(helikon);
+		boolean exit=false;
+		
+		for(;exit==false;){
+			input.nextLine();
+			System.out.println("Type \"Add\" to add a book, \"Remove\" to remove a book and \"Exit\" to exit");
+			String chose=input.nextLine();
+			
+			
+			if(chose.equals("Exit")){
+				exit=true;
+			}
+			if(chose.equals("Add")){
+				System.out.println("Enter the name of the book:"); 
+				 String bookName=input.nextLine();
+				 
+				 System.out.println("Enter the aouthor of the book:");
+				 String bookAuthor=input.nextLine();
+				 
+				 System.out.println("Enter the pages of the book:");
+				 int bookPages=input.nextInt();
+				
+				helikon.addBook(bookName, bookAuthor, bookPages);
+				System.out.println(helikon);
+			}
+			if(chose.equals("Remove")){
+				
+				System.out.println("Chose the book you want to remove");
+				String  namee=input.next();
+				helikon.removeBook(namee);
+			
+				
+			}
+		}
+		
+		input.close();
+	}
+
+}

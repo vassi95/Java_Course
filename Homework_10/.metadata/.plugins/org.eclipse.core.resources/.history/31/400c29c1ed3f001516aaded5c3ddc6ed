@@ -1,0 +1,55 @@
+package hashMap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		HashMap<String, Student> students = new HashMap<String, Student>();
+		HashMap<String, ArrayList<Double>> gradesOnSubj = new HashMap<String,ArrayList<Double>>();
+		for(int i=0;i<1;i++){
+			System.out.printf("Enter first name: ");
+			String firstName=input.next();
+			System.out.println("Enter last name:");
+			String lastName=input.next();
+			System.out.println("Enter number:");
+			int number=input.nextInt();
+			Student neww =new Student(firstName,lastName,number,gradesOnSubj);
+			for(int j=0;j<5;j++){
+			System.out.println("Enter subject: ");
+			String subj=input.next();
+			System.out.println();
+			ArrayList<Double> grades = new ArrayList<Double>();
+				System.out.println("Enter a mark");
+				double firstMark =input.nextFloat();
+				System.out.println("Enter a mark");
+				double secondMark =input.nextFloat();
+				System.out.println("Enter a mark");
+				double thirdMark =input.nextFloat();
+				grades.add(firstMark);
+				grades.add(secondMark);
+				grades.add(thirdMark);
+				gradesOnSubj.put(subj, grades);
+				neww.setFirstName(firstName);;
+				neww.setLastName(lastName);
+				neww.setNumber(number);
+				neww.setGrades(gradesOnSubj);			
+			
+			}
+			students.put(firstName + " " + lastName, neww);
+		}
+		System.out.print("Enter name: ");
+		String name = input.next();
+		System.out.println("Enter subject:");
+		String subject=input.next();
+		if(students.containsKey(name)){
+			System.out.printf("Average mark (%s): %f \n", subject, Student.calculateAverageMark(subject));
+			input.close();
+		}
+	}
+		
+
+}
