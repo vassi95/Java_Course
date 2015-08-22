@@ -1,0 +1,49 @@
+package oddAndEvenNumbers;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class OrderNumbers {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int[] arrayOfNums = new int[10];
+		System.out.println("Please enter 10 numbers:");
+		for (int i = 0; i < 10; i++) {
+			arrayOfNums[i] = input.nextInt();
+		}
+		input.close();
+order(arrayOfNums);
+	}
+
+	public static void order(int[] arr) {
+		for (int i : arr) {
+			if (i % 2 == 0) {
+				pushToArray1(i);
+			}
+			pushToArray2(i);
+		}
+	}
+
+	public static int[] pushToArray1(int num) {
+		ArrayList<Integer> array1 = new ArrayList<Integer>();
+		array1.add(num);
+		return toIntArray(array1);
+	}
+
+	public static int[] pushToArray2(int num) {
+		ArrayList<Integer> array2 = new ArrayList<Integer>();
+		array2.add(array2.size(), num);
+		return toIntArray(array2);
+	}
+	
+	public static int[] toIntArray(ArrayList<Integer> list){
+		  int[] ret = new int[list.size()];
+		  for(int i = 0;i < ret.length;i++)
+		    ret[i] = list.get(i);
+		  for(int i:list){
+				System.out.println(i);
+			}
+		  return ret;
+		}
+
+}

@@ -1,0 +1,53 @@
+package DesignPatterns;
+
+import java.util.Scanner;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in, "UTF-8");
+		System.out.println("Enter the kind of device you want to add:");
+		String device = input.nextLine();
+
+		DeviceFactory factory = DeviceFactory.getInstance();
+		System.out.print("Brand: ");
+		String brand = input.nextLine();
+
+		System.out.print("Model: ");
+		String model = input.nextLine();
+
+		if (device.toLowerCase().equals("laptop")) {
+			System.out.print("Ram: ");
+			String ram = input.nextLine();
+			System.out.print("Operating system: ");
+			String OS = input.nextLine();
+			Device newDevice = factory.createDevice(device, brand, model, ram, OS);
+
+			System.out.println();
+			newDevice.deviceInfo();
+		} else if (device.toLowerCase().equals("phone")) {
+			System.out.print("Memory: ");
+			String memory = input.nextLine();
+			Device newDevice = factory.createDevice(device, brand, model, memory);
+
+			System.out.println();
+			newDevice.deviceInfo();
+		} else if (device.toLowerCase().equals("tablet")) {
+			System.out.print("Inches: ");
+			String inches = input.nextLine();
+			System.out.print("Colour: ");
+			String colour = input.nextLine();
+			System.out.print("Processor: ");
+			String processor = input.nextLine();
+			Device newDevice = factory.createDevice(device, brand, model, inches, colour, processor);
+
+			System.out.println();
+			newDevice.deviceInfo();
+		} else {
+			System.out.print("There isn't an option for adding this type of device!");
+		}
+
+		input.close();
+	}
+
+}

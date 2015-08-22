@@ -1,0 +1,22 @@
+package quickSort;
+
+import java.util.Scanner;
+
+public class QuickSort {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int[] arrayOfNums = new int[10];
+		System.out.println("Please enter 10 numbers:");
+		for(int i = 0; i<10; i++){
+			arrayOfNums[i] = input.nextInt();
+		}
+		input.close();
+		quickSort(arrayOfNums, 0, arrayOfNums.length-1);
+
+	}
+	
+	public static void quickSort(int[] arr, int low, int high) {
+	         
+	}
+}

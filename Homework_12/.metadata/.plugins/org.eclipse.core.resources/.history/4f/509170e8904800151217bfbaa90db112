@@ -1,0 +1,61 @@
+package quickSort;
+
+import java.util.Scanner;
+
+public class QuickSort {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int[] arrayOfNums = new int[10];
+		System.out.println("Please enter 10 numbers:");
+		for(int i = 0; i<10; i++){
+			arrayOfNums[i] = input.nextInt();
+		}
+		input.close();
+		quickSort(arrayOfNums, 0, arrayOfNums.length-1);
+		System.out.println("After Bubble Sort the array is: ");
+		for (int elem : arrayOfNums) {
+			System.out.print(" " + elem);
+		}
+
+	}
+	
+		public static void quickSort(int[] arr, int left, int right) {
+			 
+	        int pivotIndex = left + (right - left) / 2;
+	        int pivotValue = arr[pivotIndex];
+	 
+	        int i = left, j = right;
+	 
+	        while(i <= j) {
+	 
+	            while(arr[i] < pivotValue) {
+	                i++;
+	            }
+	 
+	            while(arr[j] > pivotValue) {
+	                j--;
+	            }
+	 
+	            if(i <= j) {
+	                int tmp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = tmp;
+	                i++;
+	                j--;
+	            }
+	 
+	            if(left < i) {
+	                quickSort(arr, left, j);
+	            }
+	 
+	            if(right > i) {
+	                quickSort(arr, i, right);
+	            }
+	 
+	        }
+	
+	    }
+	 
+	}
+

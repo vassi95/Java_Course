@@ -1,0 +1,40 @@
+package DesignPatterns;
+
+public class Laptop extends Device {
+	private int ram;
+	private String operatingSystem;
+
+	public Laptop() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Laptop(int ram, String operatingSystem) {
+		super();
+		this.ram = ram;
+		this.operatingSystem = operatingSystem;
+	}
+
+	public int getRam() {
+		return ram;
+	}
+
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+
+	public String getOperatingSystem() {
+		return operatingSystem;
+	}
+
+	public void setOperatingSystem(String opratingSystem) {
+		this.operatingSystem = opratingSystem;
+	}
+
+	@Override
+	public void deviceInfo() {
+		System.out.printf("Model: %s | Brand: %s | Ram: %d | Operating System: %s | Colour: %s", getModel(), getBrand(),
+				getRam(), getOperatingSystem());
+	}
+
+}

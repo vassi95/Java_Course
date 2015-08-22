@@ -1,0 +1,22 @@
+package alphabeticalOrder;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SortWords {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a sentence:");
+		String sentence = input.nextLine();
+		
+		String[] arrayOfWords = sentence.split(" ");
+		input.close();
+		Arrays.sort(arrayOfWords);
+		
+		System.out.println("The sorted words are:");
+		for (int i = 0; i < arrayOfWords.length; i++) {
+			System.out.print(arrayOfWords[i] + " ");
+		}
+	}
+}

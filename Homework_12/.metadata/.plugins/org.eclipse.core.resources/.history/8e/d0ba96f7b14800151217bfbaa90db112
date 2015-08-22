@@ -1,0 +1,38 @@
+package DesignPatterns;
+
+public class Tablet extends Device {
+	private String colour;
+	private byte inches;
+	private String processor;
+
+	public String getColour() {
+		return colour;
+	}
+
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+
+	public byte getInches() {
+		return inches;
+	}
+
+	public void setInches(byte inches) {
+		this.inches = inches;
+	}
+
+	public String getProcessor() {
+		return processor;
+	}
+
+	public void setProcessor(String processor) {
+		this.processor = processor;
+	}
+
+	@Override
+	public void deviceInfo() {
+		System.out.printf("Model: %s | Brand: %s | Processor: %s | Inches: %d | Colour: %s", getModel(), getBrand(),
+				getProcessor(), getInches(), getColour());
+	}
+
+}

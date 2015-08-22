@@ -1,0 +1,25 @@
+package DesignPatterns;
+
+public class DeviceFactory {
+	private static DeviceFactory instance = new DeviceFactory();
+
+	private DeviceFactory() {
+
+	}
+
+	public static DeviceFactory getInstance() {
+		return instance;
+	}
+
+	public static Device createDevice(String device) {
+		if (device.equals("tablet")) {
+			return new Tablet();
+		} else if (device.equals("phone")) {
+			return new Phone();
+		} else if (device.equals("laptop")) {
+			return new Laptop();
+		} else
+			return null;
+	}
+
+}

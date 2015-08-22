@@ -1,0 +1,40 @@
+package DesignPatterns;
+
+public class Phone extends Device {
+	private int memory;
+	private byte megapixelsCamera;
+
+	public Phone() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Phone(int memory, byte megapixelsCamera) {
+		super();
+		this.memory = memory;
+		this.megapixelsCamera = megapixelsCamera;
+	}
+
+	public int getMemory() {
+		return memory;
+	}
+
+	public void setMemory(int memory) {
+		this.memory = memory;
+	}
+
+	public byte getMegapixelsCamera() {
+		return megapixelsCamera;
+	}
+
+	public void setMegapixelsCamera(byte megapixelsCamera) {
+		this.megapixelsCamera = megapixelsCamera;
+	}
+
+	@Override
+	public void deviceInfo() {
+		System.out.printf("Model: %s | Brand: %s | Memory: %s | Megapixels of the camera: %d ", getModel(), getBrand(),
+				getMemory(), getMegapixelsCamera());
+	}
+
+}

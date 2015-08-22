@@ -1,0 +1,68 @@
+package differentSortAlgorithms;
+import java.util.Scanner;
+public class SortAlgorithms {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int[] arrayOfNums = new int[10];
+		System.out.println("Please enter 10 numbers:");
+		for(int i = 0; i<10; i++){
+			arrayOfNums[i] = input.nextInt();
+		}
+		input.close();
+		bubbleSort(arrayOfNums);
+		selectionSort(arrayOfNums);
+		insertionSort(arrayOfNums);
+
+	}
+	
+	public static void bubbleSort(int[] arr){
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (arr[j] > arr[j + 1]) {
+					arr[j] = arr[j] + arr[j + 1];
+					arr[j + 1] = arr[j] - arr[j + 1];
+					arr[j] = arr[j] - arr[j + 1];
+				}
+			}
+		}
+		System.out.println("After Bubble Sort the array is: ");
+		for (int i : arr) {
+			System.out.print(" " + i);
+		}
+	}
+	
+	public static void selectionSort(int[] arr){
+		for (int i = 0; i < arr.length - 1; i++)
+        {
+            for (int j = i + 1; j < arr.length; j++)
+                if (arr[j] < arr[i])
+                    i = j;
+            int smallerNum = arr[i]; 
+            arr[i] = arr[i];
+            arr[i] = smallerNum;
+        }
+		System.out.println("\n\nAfter Selection Sort the array is: ");
+		for (int i : arr) {
+			System.out.print(" " + i);
+		}
+
+	}
+	
+	public static void insertionSort(int[] arr){
+		int temp;
+        for (int i = 1; i < arr.length; i++) {
+            for(int j = i ; j > 0 ; j--){
+                if(arr[j] < arr[j-1]){
+                    temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                }
+            }
+        }
+        System.out.println("\n\nAfter Insertion Sort the array is: ");
+		for (int i : arr) {
+			System.out.print(" " + i);
+		}
+	}
+}
