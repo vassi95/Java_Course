@@ -1,0 +1,176 @@
+package stackAndQueue;
+
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class NumbersPlusMinus {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Stack<Character> newStack = new Stack<Character>();
+		Queue<Character> newQueue = new LinkedList<Character>();
+		System.out.println("Please enter a valid string! \nIt must contain only digits, + and - .");
+
+		String newStr = input.nextLine();
+		if (checkForNumsAndOper(newStr) == true && checkStartEnd(newStr) == true && checkForCouples(newStr) == false) {
+			char[] newArr = newStr.toCharArray();
+			for (int i = 0; i < newArr.length; i++) {
+				if (Character.isDigit(newArr[i])) {
+					newQueue.offer(newArr[i]);
+				} else if (newArr[i] == '+' || newArr[i] == '-') {
+					newStack.push(newArr[i]);
+				}
+
+			}
+			System.out.println("The stack and the queue at the beginning:");
+//			while (!newStack.isEmpty()) {
+//				char element = newStack.pop();
+//				System.out.print(element + " ");
+//			}
+//			System.out.println();
+//			while (!newQueue.isEmpty()) {
+//				char element = newQueue.poll();
+//				System.out.print(element + " ");
+//			}
+			//print(newStack, newQueue, doTheOperation(newQueue.poll(), newQueue.poll(), newStack.pop()));
+			print(newStack, newQueue);
+			int res = doTheOperation(newQueue.poll(), newQueue.poll(), newStack.pop());
+
+			newQueue.offer((char)res);
+			System.out.println("\n\nThe result of the operation is: " + res) ;
+			print(newStack, newQueue);
+
+		}
+		else{
+			System.out.println("The entered string is not valid!Please try again!");
+		}
+		input.close();
+	
+	}
+	private static boolean checkForNumsAndOper(String input) {
+		char[] newStr = input.toCharArray();
+		boolean contains = false;
+		for (int i = 0; i < newStr.length; i++) {
+			if (Character.isDigit(newStr[i]) || newStr[i] == '+' || newStr[i] == '-') {
+				contains = true;
+			} else {
+				contains = false;
+			}
+		}
+		return contains;
+	}
+
+	private static boolean checkForCouples(String input) {
+		char[] newStr = input.toCharArray();
+		boolean couples = false;
+		for (int i = 1; i < newStr.length; i++) {
+			if (newStr[i - 1] == newStr[i]) {
+				couples = true;
+			}
+		}
+		return couples;
+	}
+
+	private static boolean checkStartEnd(String input) {
+		char[] newStr = input.toCharArray();
+		boolean ok = false;
+		if (Character.isDigit(newStr[0]) && Character.isDigit(newStr[newStr.length - 1])) {
+			ok = true;
+		}
+		return ok;
+	}
+
+	// public static void main(String[] args) {
+	// Scanner input = new Scanner(System.in);
+	// Stack<String> newStack = new Stack<String>();
+	// Queue<String> newQueue = new LinkedList<String>();
+	// String[] numbers = new String[] { "0", "1", "2", "3", "4", "5", "6", "7",
+	// "8", "9" };
+	// String[] plusMinus = new String[] { "+", "-" };
+	// System.out.println("Please enter a valid string! \nIt must contain only
+	// digits, + and - .");
+	// boolean flag = true;
+	// while (flag) {
+	// String newStr = input.nextLine();
+	// if (isValid(newStr)) {
+	// String[] newArr = newStr.split(" ");
+	// for (String symbol : newArr) {
+	// if (numbers.toString().contains(symbol)) {
+	// newQueue.offer(symbol);
+	// } else if (plusMinus.toString().contains(symbol)) {
+	// newStack.push(symbol);
+	// }
+	// }
+	// flag = false;
+	// }
+	// System.out.println("The entered string is not valid!Please try again!");
+	//
+	// }
+	// print(newStack, newQueue, doTheOperation(newStack.pop(), newStack.pop(),
+	// newQueue.poll()));
+	// input.close();
+	//
+	// }
+	//
+	// public static boolean isValid(String str) {
+	// String[] newStr = str.split(" ");
+	// String[] numbers = new String[] { "0", "1", "2", "3", "4", "5", "6", "7",
+	// "8", "9" };
+	// String[] plusMinus = new String[] { "+", "-" };
+	// if (numbers.toString().contains(newStr[0]) &&
+	// numbers.toString().contains(newStr[newStr.length])) {
+	// for (int i = 0; i < newStr.length; i++) {
+	// if(numbers.toString().contains(newStr[i])){
+	// if (numbers.toString().contains(newStr[i + 1])){
+	// return false;
+	// }
+	// }
+	// else if(plusMinus.toString().contains(newStr[i])){
+	// if(plusMinus.toString().contains(newStr[i+1])){
+	// return false;
+	// }
+	// }
+	// else{
+	// return false;
+	// }
+	// }
+	// }
+	// else{
+	// return false;
+	// }
+	// return true;
+	// }
+	public static void print(Stack<Character> st, Queue<Character> que) {
+		
+		//System.out.println("\n\nThe result of the operation is: " + result);
+//		while (!st.isEmpty()) {
+//			char element = st.pop();
+//			System.out.print(element + " ");
+//		}
+//		while (!que.isEmpty()) {
+//			char element = que.poll();
+//			System.out.print(element + " ");
+//		}
+		for(int i = 0; i< st.size();i++){
+			System.out.println(st.get(i));
+		}
+		for(Character s : que) { 
+			  System.out.println(s); 
+			}
+	}
+
+	
+	
+	public static int doTheOperation(char a, char b, char operator) {
+		int first = Character.getNumericValue(a);
+		int second = Character.getNumericValue(b);
+		if (operator == '+') {
+			return first + second;
+		} else if (operator == '-') {
+			return first - second;
+		}
+		return 0;
+	}
+}

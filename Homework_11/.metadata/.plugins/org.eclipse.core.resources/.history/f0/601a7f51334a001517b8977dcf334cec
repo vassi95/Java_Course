@@ -1,0 +1,18 @@
+package graphsAndTrees;
+
+class Node {
+
+    private java.util.Set<Node> neighbours;
+
+    public Node() {
+        neighbours = new java.util.HashSet<Node>();
+    }
+
+    public void addNeighbour(Node n) {
+        neighbours.add(n);
+    }
+
+    public java.util.Set<Node> getNeighbours() {
+        return neighbours;
+    }
+}

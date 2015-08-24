@@ -1,0 +1,55 @@
+package graphsAndTrees;
+
+
+public class Graph {
+
+	 private java.util.ArrayList<Node> nodeList;
+	    private int numberOfNodes;
+
+	    public Graph(int size) {
+	        nodeList = new java.util.ArrayList<Node>(size + 1);
+	        numberOfNodes = size;
+
+	        for (int i = 0; i <= numberOfNodes; i++) {
+	            nodeList.add(new Node());
+	        }
+	    }
+
+	    public void addEdge(int a, int b) {
+	        if (a >= 1 && a <= numberOfNodes) {
+	            if (b >= 1 && b <= numberOfNodes) {
+	                nodeList.get(a).addNeighbour(nodeList.get(b));
+	                nodeList.get(b).addNeighbour(nodeList.get(a));
+	            }
+	         }
+	    }
+
+	    public void walk(Node origin, java.util.Set<Node> visited) {
+	        for (Node n : origin.getNeighbours()) {
+	            if (!visited.contains(n)) {
+	                visited.add(n);
+	                walk(n, visited);
+	            }
+	        }
+	    }
+
+	    public boolean hasPath(Node origin, Node target) {
+	        java.util.Set<Node> reachables = new java.util.HashSet<Node>();
+	        walk(origin, reachables);
+	        return reachables.contains(target);
+	    }
+
+	    public boolean hasPath(int a, int b) {
+
+	        java.util.Set<Node> reachables = new java.util.HashSet<Node>();
+	        Node origin = nodeList.get(a);
+	        Node target = nodeList.get(b);
+	        walk(origin, reachables);
+	        return reachables.contains(target);       
+	    }
+	    
+	    
+	}
+
+	
+	

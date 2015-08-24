@@ -1,0 +1,56 @@
+package stackAndQueue;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Dequeue {
+	private List<Integer> deque = new ArrayList<Integer>();
+	
+	public void insertAtBeg(int item) {
+		System.out.println("Add in the beginning: " + item);
+		deque.add(0, item);
+		System.out.println(deque.toString());
+	}
+
+	public void insertAtEnd(int item) {
+		System.out.println("Add in the end: " + item);
+		deque.add(item);
+		System.out.println(deque);
+	}
+
+	public void removeFromBeg() {
+		if (deque.isEmpty()) {
+			System.out.println("Deque underflow!! unable to remove.");
+			return;
+		}
+
+		int rem = deque.remove(0);
+		System.out.println("Remove from the beginning: " + rem);
+		System.out.println(deque);
+	}
+
+	public void removeFromEnd() {
+		if (deque.isEmpty()) {
+			System.out.println("Deque underflow!! unable to remove.");
+			return;
+		}
+		int rem = deque.remove(deque.size() - 1);
+		System.out.println("Remove from end: " + rem);
+		System.out.println(deque);
+	}
+
+	public static void main(String a[]) {
+
+		Dequeue deq = new Dequeue();
+		deq.insertAtBeg(34);
+		deq.insertAtEnd(45);
+		deq.removeFromBeg();
+		deq.removeFromBeg();
+		deq.removeFromBeg();
+		deq.insertAtBeg(21);
+		deq.insertAtBeg(98);
+		deq.insertAtEnd(5);
+		deq.insertAtBeg(43);
+		deq.removeFromEnd();
+	}
+}

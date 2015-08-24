@@ -1,0 +1,186 @@
+package stackAndQueue;
+
+import java.util.ArrayList;
+
+public class Dequeue {
+//	private ArrayList<Integer> myDeque = new ArrayList<Integer>();
+//	
+//	public void insertAtBeg(int number) {
+//		System.out.printf("%d will be added in the beginning\n",number);
+//		myDeque.add(0, number);
+//		System.out.println(myDeque);
+//	}
+//
+//	public void insertAtEnd(int number) {
+//		System.out.printf("%d will be added in the end\n",number);
+//		myDeque.add(number);
+//		System.out.println(myDeque);
+//	}
+//
+//	public void removeFromBeg() {
+//		if (myDeque.isEmpty()) {
+//			System.out.println("You tried to delete an element but the deque is already empty!");
+//			return;
+//		}
+//
+//		int removeFirst = myDeque.remove(0);
+//		System.out.printf("%d will be removed from the beginning.\n",removeFirst);
+//		System.out.println(myDeque);
+//	}
+//
+//	public void removeFromEnd() {
+//		if (myDeque.isEmpty()) {
+//			System.out.println("You tried to delete an element but the deque is already empty!");
+//			return;
+//		}
+//		int removeLast = myDeque.remove(myDeque.size() - 1);
+//		System.out.printf("%d will be removed from the end\n",removeLast);
+//		System.out.println(myDeque);
+//	}
+//	
+//
+//	public static void main(String a[]) {
+//
+//		Dequeue deque = new Dequeue();
+//		deque.insertAtBeg(1);
+//		System.out.println();
+//		deque.insertAtEnd(2);
+//		System.out.println();
+//		deque.removeFromBeg();
+//		System.out.println();
+//		deque.removeFromBeg();
+//		System.out.println();
+//		deque.removeFromBeg();
+//		System.out.println();
+//		deque.insertAtBeg(3);
+//		System.out.println();
+//		deque.insertAtBeg(4);
+//		System.out.println();
+//		deque.insertAtEnd(5);
+//		System.out.println();
+//		deque.insertAtBeg(6);
+//		System.out.println();
+//		deque.removeFromEnd();
+//		System.out.println();
+//		deque.removeFromBeg();
+//	}
+	
+	
+	private Node<Integer> beg;
+    private Node<Integer> end;
+     
+    public void insertAtBeg(Integer number){
+        //add element at the beginning of the queue
+    	System.out.printf("%d will be added in the beginning\n",number);
+        Node<Integer> newNode = new Node<Integer>();
+        newNode.setValue(number);
+        newNode.setNext(beg);
+        if(beg != null){
+        	beg.setPrev(newNode);
+        }
+        if(beg == null){
+        	end = newNode;
+        }
+        beg = newNode;
+    }
+     
+    public void insertAtEnd(Integer number){
+    	System.out.printf("%d will be added in the end\n",number);
+        Node<Integer> newNode = new Node<Integer>();
+        newNode.setValue(number);
+        newNode.setPrev(end);
+        if(end != null){
+        	end.setNext(newNode);
+        }
+        if(end == null){
+        	beg = newNode;
+        }
+        end = newNode;
+    }
+     
+    public void removeFromBeg(){
+        if(beg == null){
+        	System.out.println("You tried to delete an element but the deque is already empty!");
+            return;
+        }
+        Node<Integer> newNode = beg.getNext();
+        if(newNode != null){
+        	newNode.setPrev(null);
+        }
+        if(newNode == null){
+        	end = null;
+        }
+        System.out.println("removed from front: "+beg.getValue());
+        beg = newNode;
+    }
+     
+    public void removeFromEnd(){
+        if(end == null){
+        	System.out.println("You tried to delete an element but the deque is already empty!");
+            return;
+        }
+
+        Node<Integer> newNode = end.getPrev();
+        if(newNode != null) {
+        	newNode.setNext(null);
+        }
+        if(newNode == null){
+        	beg = null;
+        }
+        System.out.println("removed from rear: "+end.getValue());
+        end = newNode;
+    }
+    public static void main(String a[]) {
+    	
+    			Dequeue deque = new Dequeue();
+    			deque.insertAtBeg(1);
+    			System.out.println();
+    			deque.insertAtEnd(2);
+    			System.out.println();
+    			deque.removeFromBeg();
+    			System.out.println();
+    			deque.removeFromBeg();
+    			System.out.println();
+    			deque.removeFromBeg();
+    			System.out.println();
+    			deque.insertAtBeg(3);
+    			System.out.println();
+    			deque.insertAtBeg(4);
+    			System.out.println();
+    			deque.insertAtEnd(5);
+    			System.out.println();
+    			deque.insertAtBeg(6);
+    			System.out.println();
+    			deque.removeFromEnd();
+    			System.out.println();
+    			deque.removeFromBeg();
+    		}
+   
+}
+ 
+class Node<T>{
+     
+    private Node<T> prev;
+    private Node<T> next;
+    private T value;
+     
+    public Node<T> getPrev() {
+        return prev;
+    }
+    public void setPrev(Node<T> prev) {
+        this.prev = prev;
+    }
+    public Node<T> getNext() {
+        return next;
+    }
+    public void setNext(Node<T> next) {
+        this.next = next;
+    }
+    public T getValue() {
+        return value;
+    }
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+}

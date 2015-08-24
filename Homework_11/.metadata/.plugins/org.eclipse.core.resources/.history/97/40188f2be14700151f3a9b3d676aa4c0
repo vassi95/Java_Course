@@ -1,0 +1,145 @@
+package stackAndQueue;
+
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class NumbersPlusMinus {
+
+	public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	Stack<String> newStack = new Stack<String>();
+	Queue<String> newQueue = new LinkedList<String>();
+	System.out.println("Please enter a valid string! \nIt must contain only digits, + and - .");
+	boolean flag = true;
+	//while (flag) {
+		String newStr = input.nextLine();
+		if (checkForNumsAndOper(newStr)==true && checkStartEnd(newStr)==true && checkForCouples(newStr)==false){
+			for (int i =0; i< newStr.length(); i++) {
+				if (Character.isDigit(newStr.charAt(i))){
+					newQueue.offer(newStr.charAt(i)+ "");
+				} else if (newStr.charAt(i) == '+' || newStr.charAt(i) == '-') {
+					newStack.push(newStr.charAt(i) + "");
+				}
+			//}
+			//flag = false;
+		}
+	}
+		else{
+			System.out.println("The entered string is not valid!Please try again!");
+			
+		}
+		
+	print(newStack, newQueue, doTheOperation(newQueue.poll(), newQueue.poll(), newStack.pop()));
+	input.close();
+	}
+private static boolean checkForNumsAndOper(String input){
+	boolean contains = false;
+	for(int i =0; i< input.length(); i++){
+		if(Character.isDigit(input.charAt(i)) || input.charAt(i) == '+' || input.charAt(i) == '-'){
+			contains = true;
+		}
+		else{
+			contains = false;
+		}
+	}
+	return contains;
+}
+
+private static boolean checkForCouples(String input){
+	boolean couples = false;
+	for(int i =1; i< input.length(); i++){
+		if(input.charAt(i-1) == input.charAt(i)){
+			couples = true;
+		}
+	}
+	return couples;
+}
+
+private static boolean checkStartEnd(String input){
+	boolean ok = false;
+	if(Character.isDigit(input.charAt(0)) && Character.isDigit(input.charAt(input.length()-1))){
+		ok = true;
+	}
+	return ok;
+}
+//	public static void main(String[] args) {
+//		Scanner input = new Scanner(System.in);
+//		Stack<String> newStack = new Stack<String>();
+//		Queue<String> newQueue = new LinkedList<String>();
+//		String[] numbers = new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+//		String[] plusMinus = new String[] { "+", "-" };
+//		System.out.println("Please enter a valid string! \nIt must contain only digits, + and - .");
+//		boolean flag = true;
+//		while (flag) {
+//			String newStr = input.nextLine();
+//			if (isValid(newStr)) {
+//				String[] newArr = newStr.split(" ");
+//				for (String symbol : newArr) {
+//					if (numbers.toString().contains(symbol)) {
+//						newQueue.offer(symbol);
+//					} else if (plusMinus.toString().contains(symbol)) {
+//						newStack.push(symbol);
+//					}
+//				}
+//				flag = false;
+//			}
+//				System.out.println("The entered string is not valid!Please try again!");
+//			
+//		}
+//		print(newStack, newQueue, doTheOperation(newStack.pop(), newStack.pop(), newQueue.poll()));
+//		input.close();
+//
+//	}
+//
+//	public static boolean isValid(String str) {
+//		String[] newStr = str.split(" ");
+//		String[] numbers = new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+//		String[] plusMinus = new String[] { "+", "-" };
+//		if (numbers.toString().contains(newStr[0]) && numbers.toString().contains(newStr[newStr.length])) {
+//			for (int i = 0; i < newStr.length; i++) {
+//				if(numbers.toString().contains(newStr[i])){
+//					if (numbers.toString().contains(newStr[i + 1])){
+//						return false;
+//					}
+//				}
+//				else if(plusMinus.toString().contains(newStr[i])){
+//					if(plusMinus.toString().contains(newStr[i+1])){
+//						return false;
+//					}
+//				}
+//				else{
+//					return false;
+//				}
+//			}
+//		}
+//		else{
+//			return false;
+//		}
+//		return true;
+//	}
+	public static void print(Stack<String> st, Queue<String> que, int result){
+		//que.offer(result);
+		while (!st.isEmpty()) {
+			String element = st.pop();
+			System.out.print(element + " ");
+		}
+		while (!que.isEmpty()) {
+			String element = que.poll();
+			System.out.print(element + " ");
+		}
+		System.out.println("The result of the operation is: "+ result);
+	}
+	public static int doTheOperation(String a, String b, String operator){
+		int first = Integer.parseInt(a);
+		int second = Integer.parseInt(b);
+		if(operator.equals("+")){
+			return first+second;
+		}
+		else if(operator.equals("-")){
+			return first-second;
+		}
+		return 0;
+	}
+}

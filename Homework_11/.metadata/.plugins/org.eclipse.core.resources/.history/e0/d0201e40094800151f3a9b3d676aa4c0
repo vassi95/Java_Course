@@ -1,0 +1,67 @@
+package stackAndQueue;
+
+import java.util.ArrayList;
+
+public class Dequeue {
+	private ArrayList<Integer> myDeque = new ArrayList<Integer>();
+	
+	public void insertAtBeg(int number) {
+		System.out.println("Add in the beginning: " + number);
+		myDeque.add(0, number);
+		System.out.println(myDeque);
+	}
+
+	public void insertAtEnd(int number) {
+		System.out.println("Add in the end: " + number);
+		myDeque.add(number);
+		System.out.println(myDeque);
+	}
+
+	public void removeFromBeg() {
+		if (myDeque.isEmpty()) {
+			System.out.println("The deque is already empty!");
+			return;
+		}
+
+		int removeFirst = myDeque.remove(0);
+		System.out.printf("%d will be removed from the beginning.\n",removeFirst);
+		System.out.println(myDeque);
+	}
+
+	public void removeFromEnd() {
+		if (myDeque.isEmpty()) {
+			System.out.println("The deque is already empty!");
+			return;
+		}
+		int removeLast = myDeque.remove(myDeque.size() - 1);
+		System.out.printf("%d will be removed from the end\n",removeLast);
+		System.out.println(myDeque);
+	}
+	
+
+	public static void main(String a[]) {
+
+		Dequeue deque = new Dequeue();
+		deque.insertAtBeg(1);
+		System.out.println();
+		deque.insertAtEnd(2);
+		System.out.println();
+		deque.removeFromBeg();
+		System.out.println();
+		deque.removeFromBeg();
+		System.out.println();
+		deque.removeFromBeg();
+		System.out.println();
+		deque.insertAtBeg(3);
+		System.out.println();
+		deque.insertAtBeg(4);
+		System.out.println();
+		deque.insertAtEnd(5);
+		System.out.println();
+		deque.insertAtBeg(6);
+		System.out.println();
+		deque.removeFromEnd();
+		System.out.println();
+		deque.removeFromBeg();
+	}
+}

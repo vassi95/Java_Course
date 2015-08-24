@@ -1,0 +1,30 @@
+package graphsAndTrees;
+
+class GraphTest {
+
+    private static Graph g;
+
+    public static void main(String[] args) {
+
+        g = new Graph(6);
+
+        g.addEdge(1,5);
+        g.addEdge(4,1);
+        g.addEdge(4,3);
+        g.addEdge(3,6);
+        
+        printTest(1, 2);
+        printTest(1, 4); 
+        printTest(6, 1);   
+    }
+
+    public static void printTest(int a, int b) {
+
+        System.out.print("Are nodes " + a + " and " + b + " connected?");
+        if (g.hasPath(a, b)) {
+            System.out.println(" YES.");
+        } else {
+            System.out.println(" NO.");
+        }
+    }
+}

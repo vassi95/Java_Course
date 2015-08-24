@@ -1,0 +1,66 @@
+package graphsAndTrees;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Graph {
+
+	 private ArrayList<Node> nodeList;
+	    private int numberOfNodes;
+
+	    public Graph(int size) {
+	        nodeList = new ArrayList<Node>(size + 1);
+	        numberOfNodes = size;
+
+	        for (int i = 0; i <= numberOfNodes; i++) {
+	            nodeList.add(new Node());
+	        }
+	    }
+
+	    public void addEdge(int a, int b) {
+	        if (a >= 1 && a <= numberOfNodes) {
+	            if (b >= 1 && b <= numberOfNodes) {
+	                nodeList.get(a).addNeighbour(nodeList.get(b));
+	                nodeList.get(b).addNeighbour(nodeList.get(a));
+	            }
+	         }
+	    }
+	    public boolean areConnected(Node a, Node b){
+	    	if(a.getNeighbours().contains(b)){
+	    		return true;
+	    	}
+	    	else{
+	    		return false;
+	    	}
+	    }
+	    
+	    public void walk(Node origin, Set<Node> visited) {
+	        for (Node n : origin.getNeighbours()) {
+	            if (!visited.contains(n)) {
+	                visited.add(n);
+	                walk(n, visited);
+	            }
+	        }
+	    }
+	    
+	    public boolean hasPath(Node origin, Node target) {
+	        Set<Node> reachables = new HashSet<Node>();
+	        walk(origin, reachables);
+	        return reachables.contains(target);
+	    }
+
+	    public boolean hasPath(int a, int b) {
+
+	        Set<Node> reachables = new HashSet<Node>();
+	        Node origin = nodeList.get(a);
+	        Node target = nodeList.get(b);
+	        walk(origin, reachables);
+	        return reachables.contains(target);       
+	    }
+	    
+	    
+	}
+
+	
+	
