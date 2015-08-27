@@ -1,0 +1,21 @@
+package ThirdExc;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		final Threads t1 = new Threads();
+		new Thread() {
+			public void run() {
+				t1.printNums();
+				t1.notifyAll();
+			}
+		}.start();
+		new Thread() {
+			public void run() {
+				t1.ptintRunning();
+			}
+		}.start();
+
+	}
+
+}

@@ -1,0 +1,18 @@
+package ThirdExc;
+
+public class Thread2 extends Thread {
+	synchronized void ptintRunning() {
+		System.out.println("Thread 2 is started.");
+		for (int i = 0; i < 20; i++) {
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+				e.printStackTrace();
+			}
+			System.out.println("Running...");
+		}
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package FirstExc;
+
+public class FirstThread extends Thread{
+	public void run() {
+		System.out.println("The thread is started.");
+
+	}
+}

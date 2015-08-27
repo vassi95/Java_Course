@@ -1,0 +1,15 @@
+package ThirdExc;
+
+public class Thread1 extends Thread{
+	synchronized void printNums(){
+		System.out.println("Thread 1 is started.");
+		for (int i = 0; i < 50000; i++) {
+		try{
+					
+		}catch(Exception e){
+			e.getMessage();
+		}
+		System.out.println("Thread 1 completed!");
+}
+	}
+}

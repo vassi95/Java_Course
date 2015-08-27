@@ -1,0 +1,16 @@
+package ThirdExc;
+
+public class Thread2 extends Thread {
+	public void run(){
+		System.out.println("Thread 2 is started.");
+		try{
+			for(int i=0; i<20; i++){
+				System.out.println("Running...");
+			}
+		}catch(Exception e){
+			e.getMessage();
+		}
+		System.out.println("Thread 2 completed!");
+}
+
+}

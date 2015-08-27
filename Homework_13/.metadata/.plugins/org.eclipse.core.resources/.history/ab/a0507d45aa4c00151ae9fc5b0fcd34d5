@@ -1,0 +1,14 @@
+package ThirdExc;
+
+import FirstExc.Threads;
+
+public class Thread1 extends Thread{
+	public void run(){
+		System.out.println("Thread 1 is started.");
+		try{
+					
+		}catch(Exception e){
+			e.getMessage();
+		}
+		System.out.println("Thread 1 completed!");
+}

@@ -1,0 +1,33 @@
+package FirstExc;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		Threads first = new Threads();
+		Threads second = new Threads();
+		Threads third = new Threads();
+		Threads fourth = new Threads();
+		Threads fifth = new Threads();
+		first.start();
+		second.start();
+		third.start();
+		fourth.start();
+		fifth.start();
+		first.setName("Asen");
+		System.out.println("Hi, my name is " + first.getName() + ".");
+		
+		second.setName("Petur");
+		System.out.println("Hi, my name is " + second.getName() + ".");
+		
+		third.setName("Georgi");
+		System.out.println("Hi, my name is " + third.getName() + ".");
+		
+		fourth.setName("Ivan");
+		System.out.println("Hi, my name is " + fourth.getName() + ".");
+		
+		fifth.setName("Kaloyan");
+		System.out.println("Hi, my name is " + fifth.getName() + ".");
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package ThirdExc;
+
+public class Thread1 extends Thread{
+	synchronized void printNums(){
+		for (int i = 0; i < 50000; i++) {
+			if(i == 25000){
+		try{
+					wait();
+		}catch(Exception e){
+			e.getMessage();
+		}
+
+			}
+			try{
+				notifyAll();
+			}catch(Exception e){
+				e.getMessage();
+			}
+		System.out.println(i);
+		}
+		
+	}
+}
