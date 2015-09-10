@@ -1,0 +1,16 @@
+package myPackage;
+
+import java.util.Arrays;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		SquareMatrix matr = new SquareMatrix();
+		int[][] newMatr = matr.fillMatrix();
+		int[][] newest = matr.rotateMatrix(newMatr);
+		 System.out.println(Arrays.deepToString(System.out.println(matr.getRotatedMatrix());));
+		
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package myPackage;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		SquareMatrix matr = new SquareMatrix();
+		int[][] newMatr = matr.fillMatrix();
+
+		System.out.println("\t\t\tPlease choose between:\n\n");
+		System.out.println(
+				"\t\t\t1. Rotate the matrix and write it into file.\n\t\t\t2.Find the sum of the biggest numbers on each row,column and diagonals.");
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in);
+		int choise = input.nextInt();
+		switch(choise){
+		case 1: 		
+		int[][] newest = matr.rotateMatrix(newMatr);
+		 System.out.println("The rotated matrix is:\n\n" + Arrays.deepToString(matr.getRotatedMatrix()));
+		 matr.writeMatrixInFile(newest);
+		 break;
+		case 2:System.out.println(matr.findBiggestNumbers(newMatr));
+		break;
+			
+		}
+//		 matr.writeMatrixInFile(newest);
+//		 System.out.println(matr.findBiggestNumbers(newMatr));
+		
+
+	}
+
+}

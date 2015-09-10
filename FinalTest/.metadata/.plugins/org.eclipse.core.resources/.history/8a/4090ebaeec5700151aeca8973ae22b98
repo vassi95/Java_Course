@@ -1,0 +1,34 @@
+package myPackage;
+
+import java.util.Arrays;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		
+		SquareMatrix matr = new SquareMatrix();
+		int[][] newMatr = matr.fillMatrix();
+
+
+		for(;;){
+		byte choise = matr.choise();
+		switch(choise){
+		case 1: 		
+		int[][] newest = matr.rotateMatrix(newMatr);
+		 System.out.println("The rotated matrix is:\n\n" + Arrays.deepToString(matr.getRotatedMatrix()));
+		 matr.writeMatrixInFile(newest);
+		 break;
+		case 2:System.out.println(matr.findBiggestNumbers(newMatr));
+		break;
+		case 0:
+			return;
+			
+		}
+		}
+//		 matr.writeMatrixInFile(newest);
+//		 System.out.println(matr.findBiggestNumbers(newMatr));
+		
+
+	}
+
+}
